@@ -2,14 +2,14 @@
     "Codiak": {
         "id": "1",
         "email": "codiak540@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/codiak/profile.png",
+        "pfp": "assets/workers/codiak/profile.png",
         "role": "Owner",
         "role2": "Dev"
     },
     "Tommie": {
         "id": "2",
         "email": "tommie231@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/tommie/profile.png",
+        "pfp": "assets/workers/tommie/profile.png",
         "role": "Co-Owner",
         "role2": "Dev",
         "color": "blue",
@@ -19,7 +19,7 @@
     "DJ": {
         "id": "3",
         "email": "yourfriendthedj@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/dj/profile.png",
+        "pfp": "assets/workers/dj/profile.png",
         "role": "Co-Owner",
         "role2": "Dev",
         "color": "red"
@@ -27,20 +27,20 @@
     "Do7": {
         "id":"4",
         "email": "lt_do7@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/do7/profile.png",
+        "pfp": "assets/workers/do7/profile.png",
         "role": "Builder (Minecraft)",
         "role2": "Dev"
     },
     "Chicken": {
         "id":"5",
         "email": "leftisright135@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/chicken/profile.png",
+        "pfp": "assets/workers/chicken/profile.png",
         "role": "Modeler"
     },
     "Nathan": {
         "id":"6",
         "email": "nathan_verycool@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/nathan/profile.png",
+        "pfp": "assets/workers/nathan/profile.png",
         "role": "Builder (Minecraft)",
         "role2": "Dev",
         "color": "green"
@@ -48,13 +48,13 @@
     "Vale": {
         "id":"7",
         "email": "vs_thevale@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/vale/profile.png",
+        "pfp": "assets/workers/vale/profile.png",
         "role": "Modeler"
     },
     "Evil Dan": {
         "id":"8",
         "email": "alonsy_alonso@tamastudios.us",
-        "pfp": "https://tamastudios.us/assets/workers/dam/profile.png",
+        "pfp": "assets/workers/dam/profile.png",
         "role": "Modeler",
         "color": "darkred"
     }
