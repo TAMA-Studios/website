@@ -4,10 +4,23 @@ body {
     margin: 0;
     padding: 0;
     color: white;
-    
+
 }
 
-header, footer {
+#version-number {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #222;
+    color: white;
+    padding: 1px 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    z-index: 999;
+}
+
+header,
+footer {
     background: linear-gradient(-45deg, #0044cc, #0032a1, #0040bb, #002f91);
     background-size: 400% 400%;
     animation: gradientShift 12s ease infinite;
@@ -21,22 +34,30 @@ header, footer {
 }
 
 @keyframes gradientShift {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 main {
     padding: 2em;
 }
 
-#roundabout > div {
+#roundabout>div {
     display: inline-block;
     margin: 1em;
     background: #1c1c1c;
     padding: 1em;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border-color: #973636;
 }
 
@@ -52,10 +73,12 @@ main {
 .main-role {
     color: #33bfff;
 }
+
 .nav {
     color: #fff;
     text-decoration: none;
 }
+
 a {
     text-decoration: none;
     background-color: #0032a1;
@@ -65,19 +88,26 @@ a {
     display: inline-block;
     font-weight: bold;
     transition: background 0.2s ease;
-  }
-  #roundabout > div {
-    width: 250px;
-    height: 450px;
+}
+
+#roundabout > div.roundaboutCard {
+    width: 18em;
     overflow: hidden;
     box-sizing: border-box;
-  }
-  #roundabout img {
+    padding: 16px;
+    border-radius: 12px;
+    margin: 12px;
+    text-align: center;
+    height: 25em;
+}
+
+#roundabout img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #333; /* fallback, will be overridden inline */
+    border: 2px solid #333;
+    /* fallback, will be overridden inline */
     display: block;
     margin: 0 auto;
-  }  
+}
