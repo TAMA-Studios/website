@@ -14,7 +14,7 @@ body {
     background: #222;
     color: white;
     padding: 1px 10px;
-    border-radius: 8px;
+    border-radius: 69px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     z-index: 999;
 }
@@ -101,13 +101,18 @@ a {
     height: 25em;
 }
 
-#roundabout img {
+#roundabout > div {
+    width: 250px;
+    height: 450px;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  #roundabout img {
     width: 150px;
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #333;
-    /* fallback, will be overridden inline */
+    border: 2px solid #333; /* fallback, will be overridden inline */
     display: block;
     margin: 0 auto;
-}
+  }  

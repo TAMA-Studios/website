@@ -1,7 +1,7 @@
 fetch('projects.json')
   .then(response => response.json())
   .then(data => {
-    const container = document.getElementById('roundabout');
+    const container = document.getElementById('projects');
 
     for (const key in data) {
       const project = data[key];

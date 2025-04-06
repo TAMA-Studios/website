@@ -57,5 +57,12 @@
         "pfp": "./assets/workers/dan/profile.png",
         "role": "Modeler",
         "color": "darkred"
+    },
+        "The dvasia": {
+        "id":"9",
+        "email": "thedvasia@tamastudios.us",
+        "pfp": "./assets/workers/dvasia/profile.png",
+        "role": "Modeler",
+        "color": "red"
     }
   }
