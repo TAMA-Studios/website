@@ -12,7 +12,7 @@
         "pfp": "./assets/workers/tommie/profile.png",
         "role": "Co-Owner",
         "role2": "Dev",
-        "color": "blue",
+        "color": "purple",
         "role3": "Maybe Sigma"
 
     },
@@ -22,7 +22,7 @@
         "pfp": "./assets/workers/dj/profile.png",
         "role": "Co-Owner",
         "role2": "Dev",
-        "color": "red"
+        "color": "blue"
     },
     "Do7": {
         "id":"4",
