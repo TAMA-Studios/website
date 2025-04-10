@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #232323;
+    margin: 0;
+    padding: 0;
+    color: white;
+    
+}
+
+header, footer {
+    background: linear-gradient(-45deg, #0044cc, #0032a1, #0040bb, #002f91);
+    background-size: 400% 400%;
+    animation: gradientShift 12s ease infinite;
+
+    color: white;
+    padding: 1em;
+    margin: 25px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(6px);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+main {
+    padding: 2em;
+}
+
+#roundabout > div {
+    display: inline-block;
+    margin: 1em;
+    background: #1c1c1c;
+    padding: 1em;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+    border-color: #973636;
+}
+
+.extra-roles li {
+    background: #444;
+    margin: 3px 0;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 0.9em;
+}
+
+.main-role {
+    color: #33bfff;
+}
+.nav {
+    color: #fff;
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    background-color: #0032a1;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: bold;
+    transition: background 0.2s ease;
+  }
