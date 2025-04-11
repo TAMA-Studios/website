@@ -2,66 +2,65 @@
     "Codiak": {
         "id": "1",
         "email": "codiak540@tamastudios.us",
-        "pfp": "./assets/workers/codiak/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/1185793546737958992\/4fc048cccf28a9274011d3bb9f5070e8.webp?size=4096",
         "role": "Owner",
         "role2": "Dev"
     },
     "Tommie": {
         "id": "2",
         "email": "tommie231@tamastudios.us",
-        "pfp": "./assets/workers/tommie/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/971852255009599538\/cf6c1f242cb6c094e5147eafb25afd45.webp?size=4096",
         "role": "Co-Owner",
         "role2": "Dev",
         "color": "purple",
         "role3": "Maybe Sigma"
-
     },
     "DJ": {
         "id": "3",
         "email": "yourfriendthedj@tamastudios.us",
-        "pfp": "./assets/workers/dj/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/696380993568768020\/a_fbc53c3be76d9c1e52910b9a3d15f23e.gif?size=4096",
         "role": "Co-Owner",
         "role2": "Dev",
         "color": "blue"
     },
     "Do7": {
-        "id":"4",
+        "id": "4",
         "email": "lt_do7@tamastudios.us",
-        "pfp": "./assets/workers/do7/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/1279898052706041900\/2e94d3ab9fdb00e056f2ba97ed60fb3a.webp?size=4096",
         "role": "Builder (Minecraft)",
         "role2": "Dev"
     },
     "Chicken": {
-        "id":"5",
+        "id": "5",
         "email": "leftisright135@tamastudios.us",
-        "pfp": "./assets/workers/chicken/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/696486787069247509\/223aeee37e258764bdabc21c96d0efb1.webp?size=4096",
         "role": "Modeller"
     },
     "Nathan": {
-        "id":"6",
+        "id": "6",
         "email": "nathan_verycool@tamastudios.us",
-        "pfp": "./assets/workers/nathan/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/652493899402575882\/2ffc027b44313356306dfbee928dd288.webp?size=4096",
         "role": "Builder (Minecraft)",
         "role2": "Dev",
         "color": "green"
     },
     "Vale": {
-        "id":"7",
+        "id": "7",
         "email": "vs_thevale@tamastudios.us",
-        "pfp": "./assets/workers/vale/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/270987134352097281\/ea03120171707502cac23614f0663b60.webp?size=4096",
         "role": "Modeller"
     },
     "Evil Dan": {
-        "id":"8",
+        "id": "8",
         "email": "alonsy_alonso@tamastudios.us",
-        "pfp": "./assets/workers/dan/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/889493447382290433\/d56d806d2c3fa79110996863e02cb563.webp?size=4096",
         "role": "Modeller",
         "color": "darkred"
     },
-        "The dvasia": {
-        "id":"9",
+    "The dvasia": {
+        "id": "9",
         "email": "thedvasia@tamastudios.us",
-        "pfp": "./assets/workers/dvasia/profile.png",
+        "pfp": "https:\/\/cdn.discordapp.com\/avatars\/829708771830923266\/a1055d070c16f1254fb3b7fb88f3a025.webp?size=4096",
         "role": "Modeller",
         "color": "red"
     },
