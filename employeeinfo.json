@@ -55,7 +55,8 @@
         "email": "alonsy_alonso@tamastudios.us",
         "pfp": "https:\/\/cdn.discordapp.com\/avatars\/889493447382290433\/d56d806d2c3fa79110996863e02cb563.webp?size=4096",
         "role": "Modeller",
-        "color": "darkred"
+        "color": "darkred",
+        "suspended": "true"
     },
     "The dvasia": {
         "id": "9",
