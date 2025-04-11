@@ -35,7 +35,7 @@
         "id":"5",
         "email": "leftisright135@tamastudios.us",
         "pfp": "./assets/workers/chicken/profile.png",
-        "role": "Modeler"
+        "role": "Modeller"
     },
     "Nathan": {
         "id":"6",
@@ -49,20 +49,20 @@
         "id":"7",
         "email": "vs_thevale@tamastudios.us",
         "pfp": "./assets/workers/vale/profile.png",
-        "role": "Modeler"
+        "role": "Modeller"
     },
     "Evil Dan": {
         "id":"8",
         "email": "alonsy_alonso@tamastudios.us",
         "pfp": "./assets/workers/dan/profile.png",
-        "role": "Modeler",
+        "role": "Modeller",
         "color": "darkred"
     },
         "The dvasia": {
         "id":"9",
         "email": "thedvasia@tamastudios.us",
         "pfp": "./assets/workers/dvasia/profile.png",
-        "role": "Modeler",
+        "role": "Modeller",
         "color": "red"
     }
   }

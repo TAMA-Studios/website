@@ -6,13 +6,14 @@ fetch('employeeinfo.json')
             const person = data[key];
             const name = key || '';
 
-            const borderColor = person.color || '#333'; // dark gray fallback
+            const isSuspended = person.Suspended === "true";
+            const borderColor = isSuspended ? 'red' : (person.color || '#333');
 
             const img = person.pfp
                 ? `<img src="${person.pfp}" alt="${name}" style="border-radius: 50%; width: 150px; border: 2px solid ${borderColor};">`
                 : '';
 
-            const email = person.email ? `<h4>${person.email}</h4>` : '';
+            const email = (!isSuspended && person.email) ? `<h4>${person.email}</h4>` : '';
             const id = person.id ? `<h5><small>ID: ${person.id}</small></h5>` : '';
 
             const roles = [];
@@ -21,7 +22,7 @@ fetch('employeeinfo.json')
             if (person.role4) roles.push(person.role4);
             if (person.role5) roles.push(person.role5);
 
-            const hasExtraRoles = roles.length > 0;
+            const hasExtraRoles = roles.length > 0 && !isSuspended;
 
             const arrowSVG = hasExtraRoles ? `
                 <svg class="dropdown-arrow" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="width:16px; transition: transform 0.3s ease;">
@@ -30,11 +31,13 @@ fetch('employeeinfo.json')
                         fill="#30bcfc"/>
                 </svg>` : '';
 
-            const roleDisplay = person.role ? `
+            const roleDisplay = isSuspended ? `
+                <h3 style="color: red;">Suspended from TAMA Studios</h3>
+            ` : (person.role ? `
                 <h3 class="main-role" style="cursor:pointer; display:flex; align-items:center; justify-content:center; gap:8px;">
                     ${person.role}
                     ${arrowSVG}
-                </h3>` : '';
+                </h3>` : '');
 
             const extraRoles = hasExtraRoles ? `
                 <ul class="extra-roles" style="max-height:0; overflow:hidden; transition:max-height 0.5s ease-out; list-style:none; padding:0; margin:0;">
