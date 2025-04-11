@@ -64,5 +64,12 @@
         "pfp": "./assets/workers/dvasia/profile.png",
         "role": "Modeller",
         "color": "red"
-    }
+    },
+    "Clerik": {
+    "id":"10",
+    "email": "clerik_of_music@tamastudios.us",
+    "pfp": "./assets/workers/dvasia/profile.png",
+    "role": "#@#$@?>$@>",
+    "color": "darkblue"
+}
   }
