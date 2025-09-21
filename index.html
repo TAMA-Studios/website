@@ -285,7 +285,7 @@
   <script>
     /* ===================== Employee Roundabout ===================== */
     (function () {
-      const R = 420; // radius in 3D space
+      const R = 160; // Smaller radius for more visible curve
       const ring = document.getElementById('ring');
 
       async function loadEmployees() {
@@ -294,16 +294,13 @@
           if (!res.ok) throw new Error('missing employeeinfo.json');
           return await res.json();
         } catch (e) {
-          // Fallback demo data
+          // Fallback demo data - DJ always first and visible, fewer missing
           return [
             { name: 'DJ', title: 'CO-Owner', photo: 'https://64.media.tumblr.com/ae674249408d93802da747ff920f69ee/06e0008482d0b5bd-f7/s1280x1920/c6e58dc8ecb643ccf2226bd35122cee76a462cd3.pnj' },
             { name: 'Tommie', title: 'CO-Owner', photo: 'https://picsum.photos/seed/b/400/500' },
             { name: 'Codiak', title: 'Owner', photo: 'https://picsum.photos/seed/c/400/500' },
             { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
-            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
-            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
-            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
-            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
+            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' }
           ];
         }
       }
@@ -324,12 +321,16 @@
       function placeCards(cards) {
         const n = cards.length;
         const step = 360 / n;
+        const verticalSpread = 60; // vertical amplitude
+
         cards.forEach((c, i) => {
-          const rot = i * step;
-          const rad = rot * Math.PI / 180;
+          const rotY = i * step;
+          const rad = rotY * Math.PI / 180;
+          // Circular placement: X and Z for ring, Y for up/down curve
           const x = Math.cos(rad) * R;
           const z = Math.sin(rad) * R;
-          c.style.transform = `translate3d(-50%, -50%, ${z}px) rotateY(${rot}deg) translateX(${x}px)`;
+          const y = Math.sin(rad) * verticalSpread; // vertical curve for circular effect
+          c.style.transform = `translate3d(-50%, -50%, ${z}px) rotateY(${rotY}deg) translateX(${x}px) translateY(${y}px)`;
           ring.appendChild(c);
         });
       }
@@ -354,6 +355,6 @@
         attachControls();
       })();
     })();
-  </script>
+    </script>
 </body>
 </html>
