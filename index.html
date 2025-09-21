@@ -109,7 +109,7 @@
   </main>
 
   <footer>
-    Data comes from <code>employeeinfo.json</code>. If the file is missing, no cards will display.
+    Data comes from <code>employeeinfo.json</code>. If the file is missing, demo cards are shown.
   </footer>
 
   <script>
@@ -124,7 +124,6 @@
       let velocity = 0;      // degrees per frame
       let dragging = false;
       let lastY = 0;
-      let target = null;     // snap target in degrees
 
       const R = 360;         // translateZ radius for cards
       let step = 30;         // will be recomputed from n
@@ -142,17 +141,34 @@
         try{
           const res = await fetch('employeeinfo.json', { cache: 'no-store' });
           if(!res.ok) throw 0;
-          const arr = await res.json();
-          if(!Array.isArray(arr)) return [];
-          // Do not invent data. Filter to known fields only.
-          return arr.map(x => ({
-            name: (x && x.name) ? String(x.name) : '',
-            title: (x && x.title) ? String(x.title) : '',
-            photo: (x && x.photo) ? String(x.photo) : ''
-          }));
-        }catch(e){
-          // No fallback content per instruction. Return empty.
+          const data = await res.json();
+          // Support array or object schema without inventing fields
+          if(Array.isArray(data)){
+            return data.map(x => ({
+              name: (x && x.name) ? String(x.name) : '',
+              title: (x && x.title) ? String(x.title) : '',
+              photo: (x && x.photo) ? String(x.photo) : ''
+            }));
+          } else if (data && typeof data === 'object') {
+            return Object.keys(data).map(k => {
+              const x = data[k] || {};
+              return {
+                name: String(k),
+                title: x.role ? String(x.role) : '',
+                photo: x.pfp ? String(x.pfp) : ''
+              };
+            });
+          }
           return [];
+        }catch(e){
+          // Fallback demo data from prior version
+          return [
+            { name: 'DJ', title: 'CO-Owner', photo: 'https://64.media.tumblr.com/ae674249408d93802da747ff920f69ee/06e0008482d0b5bd-f7/s1280x1920/c6e58dc8ecb643ccf2226bd35122cee76a462cd3.pnj' },
+            { name: 'Tommie', title: 'CO-Owner', photo: 'https://picsum.photos/seed/b/400/500' },
+            { name: 'Codiak', title: 'Owner', photo: 'https://picsum.photos/seed/c/400/500' },
+            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' },
+            { name: 'Missing data', title: 'Missing data', photo: 'https://tamastudios.us/assets/sitewide/logo_plain.png' }
+          ];
         }
       }
 
@@ -161,7 +177,7 @@
         d.className = 'card';
         const img = emp.photo ? emp.photo : '';
         d.innerHTML = `
-          <img alt="" loading="lazy" src="${img}">
+          <img alt="${emp.name}" loading="lazy" src="${img}">
           <div>
             <h3>${emp.name ?? ''}</h3>
             <p>${emp.title ?? ''}</p>
