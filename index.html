@@ -1,1 +1,359 @@
 <!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Company — Employee Roundabout + Particle Logo</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #111218;
+      --text: #e6e6e6;
+      --muted: #9aa0a6;
+      --ring: #2dd4bf;
+    }
+    * { box-sizing: border-box }
+    html, body { height: 100% }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      min-height: 100dvh;
+    }
+    header, main, footer { width: min(1100px, 92vw); margin: 0 auto; }
+    header { display: grid; grid-template-columns: 500px 1fr; gap: 24px; align-items: center; padding: 28px 0; }
+    .logo-wrap { width: 500px; height: 500px; place-self: center; }
+    #logoCanvas { width: 500px; height: 500px; display: block; background: transparent; }
+    .title { font-size: clamp(22px, 3.2vw, 36px); margin: 0 0 6px }
+    .sub { color: var(--muted); margin: 0 0 18px }
+
+    /* Roundabout */
+    .roundabout { position: relative; height: 380px; margin: 28px 0 60px; perspective: 1200px; }
+    .roundabout .ring { position: absolute; inset: 0; transform-style: preserve-3d; animation: spin 24s linear infinite; }
+    .roundabout:hover .ring { animation-play-state: paused }
+    @keyframes spin { from { transform: rotateY(0deg) } to { transform: rotateY(360deg) } }
+    .card { position: absolute; top: 50%; left: 50%; transform-style: preserve-3d; width: 220px; height: 280px; padding: 14px; border-radius: 18px; background: color-mix(in oklab, var(--card), black 4%); box-shadow: 0 10px 40px rgb(0 0 0 / 0.45); display: grid; grid-template-rows: 160px auto; gap: 12px; outline: 1px solid color-mix(in oklab, var(--card), white 8%);
+    }
+    .card img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px }
+    .card h3 { margin: 0; font-size: 18px }
+    .card p { margin: 0; color: var(--muted) }
+    .controls { display: flex; gap: 10px; align-items: center }
+    .btn { appearance: none; border: 0; border-radius: 14px; padding: 10px 14px; background: #1e1f29; color: var(--text); cursor: pointer; outline: 2px solid transparent; transition: outline-color .2s ease; }
+    .btn:focus-visible { outline-color: var(--ring) }
+    footer { color: var(--muted); padding: 18px 0 38px }
+    a { color: var(--ring); text-decoration: none }
+    a:hover { text-decoration: underline }
+
+    @media (max-width: 1020px) {
+      header { grid-template-columns: 1fr; justify-items: center; text-align: center }
+      .logo-wrap { order: -1 }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <section>
+      <h1 class="title">Employee Roundabout + Particle Logo</h1>
+      <p class="sub">Drop a <code>logo.png</code> with transparent background in the same folder to shape the particles. No logo file = auto text sampling.</p>
+      <div class="controls">
+        <button class="btn" id="reshuffle">Reseed Particles</button>
+        <button class="btn" id="pause">Pause</button>
+      </div>
+    </section>
+    <div class="logo-wrap">
+      <!-- Transparent WebGL canvas. Exactly 500 × 500 intrinsic pixels, as requested. -->
+      <canvas id="logoCanvas" width="500" height="500" aria-label="Particle logo" role="img"></canvas>
+    </div>
+  </header>
+
+  <main>
+    <h2 class="title">Team Roundabout</h2>
+    <p class="sub">Reads <code>employeeinfo.json</code> with fields: <code>name</code>, <code>title</code>, <code>photo</code>. Falls back to demo data if the file is missing.</p>
+    <div class="roundabout" id="roundabout" aria-live="polite">
+      <div class="ring" id="ring"></div>
+    </div>
+  </main>
+
+  <footer>
+    Built for a 500×500 particle logo with 200 colored points. Background remains transparent for compositing.
+  </footer>
+
+  <script>
+    /* ===================== WebGL 2D Particle Logo ===================== */
+    (function () {
+      const canvas = document.getElementById('logoCanvas');
+      const gl = canvas.getContext('webgl', { alpha: true, antialias: true, premultipliedAlpha: true });
+      if (!gl) { console.warn('WebGL not available'); return; }
+
+      // Shader sources
+      const vs = `
+        attribute vec2 a_position; // pixel space
+        attribute vec3 a_color;
+        uniform vec2 u_resolution; // pixel
+        uniform float u_pointSize;
+        varying vec3 v_color;
+        void main() {
+          vec2 zeroToOne = a_position / u_resolution;
+          vec2 clip = zeroToOne * 2.0 - 1.0;
+          gl_Position = vec4(clip * vec2(1, -1), 0, 1);
+          gl_PointSize = u_pointSize;
+          v_color = a_color;
+        }
+      `;
+      const fs = `
+        precision mediump float;
+        varying vec3 v_color;
+        void main() {
+          // circular point sprite, soft edge
+          vec2 c = gl_PointCoord * 2.0 - 1.0;
+          float d = dot(c, c);
+          if (d > 1.0) discard;
+          float a = smoothstep(1.0, 0.7, d);
+          gl_FragColor = vec4(v_color, a);
+        }
+      `;
+
+      function compile(type, src) {
+        const s = gl.createShader(type); gl.shaderSource(s, src); gl.compileShader(s);
+        if (!gl.getShaderParameter(s, gl.COMPILE_STATUS)) { throw new Error(gl.getShaderInfoLog(s)); }
+        return s;
+      }
+      const prog = gl.createProgram();
+      gl.attachShader(prog, compile(gl.VERTEX_SHADER, vs));
+      gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fs));
+      gl.linkProgram(prog);
+      if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) throw new Error(gl.getProgramInfoLog(prog));
+      gl.useProgram(prog);
+
+      const aPos = gl.getAttribLocation(prog, 'a_position');
+      const aCol = gl.getAttribLocation(prog, 'a_color');
+      const uRes = gl.getUniformLocation(prog, 'u_resolution');
+      const uPt = gl.getUniformLocation(prog, 'u_pointSize');
+
+      gl.uniform2f(uRes, canvas.width, canvas.height);
+      gl.uniform1f(uPt, 6.0);
+      gl.clearColor(0, 0, 0, 0); // transparent
+      gl.enable(gl.BLEND);
+      gl.blendFunc(gl.SRC_ALPHA, gl.ONE_MINUS_SRC_ALPHA);
+
+      // Particle state
+      const N = 200; // exactly per requirement
+      const pts = new Float32Array(N * 2); // current positions
+      const home = new Float32Array(N * 2); // target positions
+      const vel = new Float32Array(N * 2);
+      const col = new Float32Array(N * 3);
+
+      const posBuf = gl.createBuffer();
+      const colBuf = gl.createBuffer();
+
+      function rand(min, max) { return Math.random() * (max - min) + min; }
+
+      function setAttrib(buffer, attribLoc, size, type=gl.FLOAT) {
+        gl.bindBuffer(gl.ARRAY_BUFFER, buffer);
+        gl.enableVertexAttribArray(attribLoc);
+        gl.vertexAttribPointer(attribLoc, size, type, false, 0, 0);
+      }
+
+      async function tryLoadLogoAndSample() {
+        // Try logo.png. Fallback to text mask.
+        try {
+          const img = new Image();
+          img.src = 'logo.png';
+          await img.decode();
+          const w = 500, h = 500;
+          const s = document.createElement('canvas');
+          s.width = w; s.height = h;
+          const ctx = s.getContext('2d');
+          ctx.clearRect(0,0,w,h);
+          // Draw image centered inside 500x500 preserving aspect
+          const scale = Math.min(w / img.width, h / img.height);
+          const dw = img.width * scale, dh = img.height * scale;
+          ctx.drawImage(img, (w - dw) / 2, (h - dh) / 2, dw, dh);
+          return sampleOpaque(ctx, w, h);
+        } catch (e) {
+          return sampleTextMask('TS', 380); // default initials. Update as needed.
+        }
+      }
+
+      function sampleOpaque(ctx, w, h) {
+        const data = ctx.getImageData(0, 0, w, h).data;
+        const samples = [];
+        const tries = 20000;
+        let guard = 0;
+        while (samples.length < N && guard++ < tries) {
+          const x = (Math.random() * w) | 0;
+          const y = (Math.random() * h) | 0;
+          const i = (y * w + x) * 4;
+          const a = data[i + 3];
+          if (a > 10) {
+            const r = data[i], g = data[i + 1], b = data[i + 2];
+            samples.push([x + 0.5, y + 0.5, r/255, g/255, b/255]);
+          }
+        }
+        // If not enough, fill remaining with random positions and pleasant colors
+        while (samples.length < N) {
+          samples.push([rand(0, w), rand(0, h), 0.7, 0.85, 1.0]);
+        }
+        return samples;
+      }
+
+      function sampleTextMask(text, size) {
+        const w = 500, h = 500;
+        const s = document.createElement('canvas'); s.width = w; s.height = h;
+        const ctx = s.getContext('2d');
+        ctx.clearRect(0,0,w,h);
+        ctx.font = `bold ${size}px system-ui, Arial`;
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        const gradient = ctx.createLinearGradient(0,0,w,h);
+        gradient.addColorStop(0, '#60a5fa');
+        gradient.addColorStop(1, '#34d399');
+        ctx.fillStyle = gradient;
+        ctx.fillText(text, w/2, h/2);
+        return sampleOpaque(ctx, w, h);
+      }
+
+      function seedParticles(samples) {
+        for (let i = 0; i < N; i++) {
+          const s = samples[i % samples.length];
+          const hx = s[0], hy = s[1];
+          const j = i * 2, k = i * 3;
+          home[j] = hx; home[j+1] = hy;
+          pts[j] = rand(0, canvas.width); pts[j+1] = rand(0, canvas.height);
+          vel[j] = rand(-0.3, 0.3); vel[j+1] = rand(-0.3, 0.3);
+          col[k] = s[2]; col[k+1] = s[3]; col[k+2] = s[4];
+        }
+        gl.bindBuffer(gl.ARRAY_BUFFER, posBuf); gl.bufferData(gl.ARRAY_BUFFER, pts, gl.DYNAMIC_DRAW);
+        setAttrib(posBuf, aPos, 2);
+        gl.bindBuffer(gl.ARRAY_BUFFER, colBuf); gl.bufferData(gl.ARRAY_BUFFER, col, gl.STATIC_DRAW);
+        setAttrib(colBuf, aCol, 3);
+      }
+
+      function tick(dt) {
+        // Integrate toward home with gentle drift
+        const stiffness = 0.02;
+        const damping = 0.92;
+        const jitter = 0.05;
+        for (let i = 0; i < N; i++) {
+          const j = i * 2;
+          const ax = (home[j] - pts[j]) * stiffness + (Math.random() - 0.5) * jitter;
+          const ay = (home[j+1] - pts[j+1]) * stiffness + (Math.random() - 0.5) * jitter;
+          vel[j] = vel[j] * damping + ax;
+          vel[j+1] = vel[j+1] * damping + ay;
+          pts[j] += vel[j];
+          pts[j+1] += vel[j+1];
+        }
+        gl.bindBuffer(gl.ARRAY_BUFFER, posBuf);
+        gl.bufferSubData(gl.ARRAY_BUFFER, 0, pts);
+
+        gl.clear(gl.COLOR_BUFFER_BIT);
+        gl.drawArrays(gl.POINTS, 0, N);
+      }
+
+      let raf = 0, last = 0, running = true;
+      function loop(t) {
+        if (!running) return;
+        const dt = Math.min(33, t - last); last = t;
+        tick(dt);
+        raf = requestAnimationFrame(loop);
+      }
+
+      function start() { if (!running) { running = true; last = performance.now(); raf = requestAnimationFrame(loop); } }
+      function stop()  { running = false; cancelAnimationFrame(raf); }
+
+      document.getElementById('pause').addEventListener('click', (e) => {
+        running ? stop() : start();
+        e.target.textContent = running ? 'Pause' : 'Resume';
+      });
+
+      document.getElementById('reshuffle').addEventListener('click', async () => {
+        const samples = await tryLoadLogoAndSample();
+        seedParticles(samples.sort(() => Math.random() - 0.5));
+      });
+
+      (async () => {
+        const samples = await tryLoadLogoAndSample();
+        seedParticles(samples);
+        start();
+      })();
+    })();
+  </script>
+
+  <script>
+    /* ===================== Employee Roundabout ===================== */
+    (function () {
+      const R = 420; // radius in 3D space
+      const ring = document.getElementById('ring');
+
+      async function loadEmployees() {
+        try {
+          const res = await fetch('employeeinfo.json', { cache: 'no-store' });
+          if (!res.ok) throw new Error('missing employeeinfo.json');
+          return await res.json();
+        } catch (e) {
+          // Fallback demo data
+          return [
+            { name: 'Alex Rivera', title: 'Design Lead', photo: 'https://picsum.photos/seed/a/400/500' },
+            { name: 'Chen Li', title: 'CTO', photo: 'https://picsum.photos/seed/b/400/500' },
+            { name: 'Sam Patel', title: 'Frontend', photo: 'https://picsum.photos/seed/c/400/500' },
+            { name: 'Priya Singh', title: 'ML Engineer', photo: 'https://picsum.photos/seed/d/400/500' },
+            { name: 'Taylor Brooks', title: 'PM', photo: 'https://picsum.photos/seed/e/400/500' },
+            { name: 'Jordan Kim', title: 'Backend', photo: 'https://picsum.photos/seed/f/400/500' },
+            { name: 'Morgan Lee', title: 'Ops', photo: 'https://picsum.photos/seed/g/400/500' },
+            { name: 'Riley Khan', title: 'QA', photo: 'https://picsum.photos/seed/h/400/500' },
+          ];
+        }
+      }
+
+      function createCard(emp) {
+        const d = document.createElement('article');
+        d.className = 'card';
+        d.innerHTML = `
+          <img alt="${emp.name}" loading="lazy" src="${emp.photo}">
+          <div>
+            <h3>${emp.name}</h3>
+            <p>${emp.title}</p>
+          </div>
+        `;
+        return d;
+      }
+
+      function placeCards(cards) {
+        const n = cards.length;
+        const step = 360 / n;
+        cards.forEach((c, i) => {
+          const rot = i * step;
+          const rad = rot * Math.PI / 180;
+          const x = Math.cos(rad) * R;
+          const z = Math.sin(rad) * R;
+          c.style.transform = `translate3d(-50%, -50%, ${z}px) rotateY(${rot}deg) translateX(${x}px)`;
+          ring.appendChild(c);
+        });
+      }
+
+      function attachControls() {
+        let dragging = false; let startX = 0; let rotY = 0;
+        const onDown = e => { dragging = true; startX = (e.touches? e.touches[0].clientX : e.clientX); ring.style.animationPlayState = 'paused'; };
+        const onMove = e => {
+          if (!dragging) return;
+          const x = (e.touches? e.touches[0].clientX : e.clientX);
+          const dx = x - startX; startX = x; rotY += dx * 0.4; ring.style.transform = `rotateY(${rotY}deg)`;
+        };
+        const onUp = () => { dragging = false; ring.style.animationPlayState = 'running'; };
+        ring.addEventListener('mousedown', onDown); window.addEventListener('mousemove', onMove); window.addEventListener('mouseup', onUp);
+        ring.addEventListener('touchstart', onDown, { passive: true }); window.addEventListener('touchmove', onMove, { passive: true }); window.addEventListener('touchend', onUp);
+      }
+
+      (async () => {
+        const employees = await loadEmployees();
+        const cards = employees.map(createCard);
+        placeCards(cards);
+        attachControls();
+      })();
+    })();
+  </script>
+</body>
+</html>
