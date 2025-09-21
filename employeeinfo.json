@@ -1,0 +1,67 @@
+{
+  "Codiak": {
+    "id": "1",
+    "email": "codiak540@tamastudios.us",
+    "pfp": "./assets/workers/codiak/profile.png",
+    "role": "Owner",
+    "role2": "Dev"
+  },
+  "Tommie": {
+    "id": "2",
+    "email": "tommie231@tamastudios.us",
+    "pfp": "./assets/workers/tommie/profile.png",
+    "role": "Co-Owner",
+    "role2": "Dev",
+    "color": "purple",
+    "role3": "Maybe Sigma"
+  },
+  "DJ": {
+    "id": "3",
+    "email": "yourfriendthedj@tamastudios.us",
+    "pfp": "./assets/workers/dj/profile.png",
+    "role": "Co-Owner",
+    "role2": "Dev",
+    "color": "blue"
+  },
+  "Do7": {
+    "id": "4",
+    "email": "lt_do7@tamastudios.us",
+    "pfp": "./assets/workers/do7/profile.png",
+    "role": "Builder (Minecraft)",
+    "role2": "Dev"
+  },
+  "Chicken": {
+    "id": "5",
+    "email": "leftisright135@tamastudios.us",
+    "pfp": "./assets/workers/chicken/profile.png",
+    "role": "Modeller"
+  },
+  "Nathan": {
+    "id": "6",
+    "email": "nathan_verycool@tamastudios.us",
+    "pfp": "./assets/workers/nathan/profile.png",
+    "role": "Builder (Minecraft)",
+    "role2": "Dev",
+    "color": "green"
+  },
+  "Vale": {
+    "id": "7",
+    "email": "vs_thevale@tamastudios.us",
+    "pfp": "./assets/workers/vale/profile.png",
+    "role": "Modeller"
+  },
+  "Evil Dan": {
+    "id": "8",
+    "email": "alonsy_alonso@tamastudios.us",
+    "pfp": "./assets/workers/dan/profile.png",
+    "role": "Modeller",
+    "color": "darkred"
+  },
+  "The dvasia": {
+    "id": "9",
+    "email": "thedvasia@tamastudios.us",
+    "pfp": "./assets/workers/dvasia/profile.png",
+    "role": "Modeller",
+    "color": "red"
+  }
+}
