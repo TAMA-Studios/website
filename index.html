@@ -1,47 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-<main>
-    <nav>
-    
-        <ul class="ulnav">
-            <img src="./img/logo.png" alt="Logo" style="width: 60px; height: auto;">
-            <li><a href="./" class="navbtnselected">Home</a></li>
-            <li><a href="./projects" class="navbtn">Projects</a></li>
-            <li><a href="mailto:hello@tamastudios.us" class="navbtn">Contact</a></li>
-        </ul>
-    </nav>
-<hr>
-<header>
-    <h1>TAMA Studios</h1>
-    <p class="headerimgowntxt">Img from <a href="https://negativespace.co/colorful-gradient-background-soft/" class="headlnk"><b>Vidsplay on Negatie Space</b></a></p>
-</header>
+    <body>
+        
+    </body>
+    <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.8.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-<div class="section1">
-    <h1 class="sectiontitle1">Projects</h1>
-    <hr>
-    <h3>Coming soon!</h3>
-</div>
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyC-vWtGmvP_DGftAqyyjkRTMzuN82NNvGw",
+    authDomain: "tama-studios-a6ae6.firebaseapp.com",
+    projectId: "tama-studios-a6ae6",
+    storageBucket: "tama-studios-a6ae6.firebasestorage.app",
+    messagingSenderId: "411967557965",
+    appId: "1:411967557965:web:68abee51dd00b4bd746704",
+    measurementId: "G-PS93PHQQJX"
+  };
 
-<div class="section1">
-    <h1 class="sectiontitle1">Recent bluesky posts</h1>
-    <hr>
-    <h3>Coming soon!</h3>
-</div>
-
-</main>
-<footer>
-    <div class="footerl">
-
-        <li><p>&copy; TAMA Studios 2025. All rights reserved</p></li>
-        <li><a href="https://discord.gg/tamastudios"><img src="https://www.svgrepo.com/show/447163/discord-outline.svg" class="footericons invert"></a><a href="https://github.com/TAMA-Studios/"><img src="https://www.svgrepo.com/show/447165/github-outline.svg" class="footericons invert"></a><a href="https://bsky.app/profile/tamastudios.us"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Bluesky_logo_%28black%29.svg" class="footericons invert"></a></li>
-    </div>
-</footer>
-</body>
-
-
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
 </html>
