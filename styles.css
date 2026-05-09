@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    padding-top: 60px;
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    background: #000000;
+    padding: 15px;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 1000;
+}
+
+.navbar a {
+    color: rgb(215, 234, 251);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+section {
+  min-height: 100vh;
+  padding: 20px;
+}
