@@ -5,6 +5,8 @@ body {
     margin: 0;
     padding-top: 40px;
     scroll-behavior: smooth;
+    background-color: rgb(12, 12, 12);
+    color: rgb(251, 234, 202);
 }
 
 .navbar {
@@ -36,4 +38,26 @@ body {
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+}
+
+
+hr {
+    background-color: #395bb1e3;
+    height: 2px;
+    border: none;
+}
+
+.ascii-title {
+    font-family: monospace;
+    white-space: pre;
+    color: white;
+    font-size: 32px;
+    line-height: 1;
+}
+.ascii-footer {
+    font-family: monospace;
+    white-space: pre;
+    color: white;
+    font-size: 8px;
+    line-height: 1;
 }
