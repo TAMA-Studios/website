@@ -6,7 +6,8 @@ body {
     padding-top: 40px;
     scroll-behavior: smooth;
     background-color: rgb(12, 12, 12);
-    color: rgb(251, 234, 202);
+    color: rgb(218, 240, 253);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
 }
 
 #binary-bg {
@@ -43,10 +44,11 @@ body {
     color: rgb(215, 234, 251);
     text-decoration: none;
     margin-right: 20px;
+    transition: 0.2s ease;
 }
 
 .navbar a:hover {
-    color: rgb(143, 203, 255);
+    color: rgb(108, 186, 255);
 }
 
 
