@@ -9,21 +9,34 @@ body {
     color: rgb(251, 234, 202);
 }
 
+#binary-bg {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-color: rgb(12, 12, 12);
+}
+
 .navbar {
-    background: #001a5ce3;
+    background: linear-gradient(to left,  #00387de3,  #910000e3,  #9000b1e3);
     padding: 15px;
 
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 80%;
     box-sizing: border-box;
+    margin-left: 20%;
 
     display: flex;
     justify-content: flex-end;
     align-items: center;
 
     z-index: 1000;
+
+    border-bottom-left-radius: 25px;
+
 }
 
 .navbar a {
@@ -32,24 +45,36 @@ body {
     margin-right: 20px;
 }
 
+.navbar a:hover {
+    color: rgb(143, 203, 255);
+}
+
+
+.sectmain {
+    text-align: center;
+    padding: 24px;
+}
 
 .sectmain h1 {
     font-family: "Edu NSW ACT Cursive", cursive;
     font-optical-sizing: auto;
     font-weight: 700;
     font-style: normal;
+    margin: 0;
 }
 
 
 hr {
-    background-color: #395bb1e3;
+    background: linear-gradient(to left, #395bb1, #a739b1, #b13939);
     height: 2px;
     border: none;
 }
 
 .ascii-title {
+    display: inline-block;
     font-family: monospace;
     white-space: pre;
+    text-align: left;
     color: white;
     font-size: 32px;
     line-height: 1;
@@ -60,4 +85,75 @@ hr {
     color: white;
     font-size: 8px;
     line-height: 1;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 220px));
+    gap: 16px;
+    align-items: start;
+    justify-content: start;
+    padding: 0 24px 24px;
+}
+
+.team-card {
+    border: 1px solid #395bb1e3;
+    padding: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    height: 250px;
+}
+
+.team-card:hover {
+    border-color: #4668bfe3;
+    background-color: rgba(57, 91, 177, 0.12);
+}
+
+.team-card-image {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+
+.team-card-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.team-card-socials a {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: inherit;
+    text-decoration: none;
+    font: inherit;
+}
+
+.team-card-socials a.has-icon {
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.team-card-socials a.has-icon span {
+    font-size: 0.75rem;
+}
+
+.team-card-social-icon {
+    width: 25px;
+    height: 25px;
+    object-fit: contain;
+}
+
+.team-card-quote {
+    font-style: italic;
+}
+
+.about-seperator {
+    margin-bottom: 3%;
+    background: linear-gradient(to left, #5f8dff, #f262ff, #ff5b5b);
 }

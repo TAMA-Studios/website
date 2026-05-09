@@ -5,6 +5,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <canvas id="binary-bg"></canvas>
   <nav class="navbar">
     <a href="#">About</a>
     <a href="#">Team</a>
@@ -12,7 +13,7 @@
     <a href="#">Resources</a>
     <a href="#">Social / Contact</a>
   </nav>
-  <hr>
+
   <section id="about" class="sectmain">
       <h1>
         <pre class="ascii-title">
@@ -25,12 +26,24 @@
                                     
         </pre>
       </h1>
-      <p>Here at TAMA Studios, We make different open source projects and even minecraft mods.</p>
-      <p>Or as our amazing founder / owner has put previously:</p>
-      <p>TAMA Studios is dedicated to releasing awesome thrilling jaw dropping games, movies, music, novels, for SCIENCE</p>
+      <hr class="about-seperator">
+      <h3>Here at TAMA Studios, We make different open source projects and even minecraft mods.</h3>
+      <h3>Or as our amazing founder / owner has put previously:</h3>
+      <h3>TAMA Studios is dedicated to releasing awesome thrilling jaw dropping games, movies, music, novels, for SCIENCE</h3>
   </section>
+  <hr class="about-seperator">
   <section id="team">
     <h1>Team</h1>
+    <div id="team-members">
+      <p>Devs</p>
+      <div id="team-Devs" class="team-grid">
+
+      </div>
+      <p>Artists</p>
+      <div id="team-artists" class="team-grid">
+        
+      </div>
+    </div>
   </section>
   <section id="projects">
     <h1>Projects</h1>
@@ -53,6 +66,8 @@
     </pre>
     <h4 id="copyright">&copy; TAMA Studios 2026</h4>
   </footer>
+  <script src="binary-bg.js"></script>
+  <script src="main.js"></script>
 
 </body>
 </html>
