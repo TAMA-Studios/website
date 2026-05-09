@@ -1,17 +1,25 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
+
 body {
     margin: 0;
-    padding-top: 60px;
+    padding-top: 40px;
     scroll-behavior: smooth;
 }
 
 .navbar {
-    background: #000000;
+    background: #001a5ce3;
     padding: 15px;
 
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
     z-index: 1000;
 }
@@ -22,7 +30,10 @@ body {
     margin-right: 20px;
 }
 
-section {
-  min-height: 100vh;
-  padding: 20px;
+
+.sectmain h1 {
+    font-family: "Edu NSW ACT Cursive", cursive;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
