@@ -1,6 +1,8 @@
 const categoryTargets = {
     Artists: "team-artists",
-    Devs: "team-Devs"
+    Devs: "team-Devs",
+    Builders: "team-builders",
+    Others: "team-others"
 };
 
 function createTeamCard(member) {
@@ -41,7 +43,10 @@ function createTeamCard(member) {
         socials.appendChild(link);
     });
 
-    card.append(image, name, socials);
+    const separator = document.createElement("hr");
+    separator.className = "team-card-separator";
+
+    card.append(image, name, socials, separator);
 
     if (member.quote) {
         const quote = document.createElement("p");
