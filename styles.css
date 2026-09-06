@@ -1,173 +1,132 @@
-
-@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap");
-
-body {
-    margin: 0;
-    padding-top: 40px;
-    scroll-behavior: smooth;
-    background-color: rgb(12, 12, 12);
-    color: rgb(218, 240, 253);
-    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+* {
+  box-sizing: border-box;
 }
 
-#binary-bg {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    background-color: rgb(12, 12, 12);
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.logo-nav {
+    width: 50px;
+    height: 50px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+hr {
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+  margin: 8px 0;
+  border: none;
+  border-top: 1px solid white;
+}
+
+
+body {
+    background-color: #171b2a;
 }
 
 .navbar {
-    background: linear-gradient(to left,  #00387de3,  #910000e3,  #9000b1e3);
-    padding: 15px;
-
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 80%;
-    box-sizing: border-box;
-    margin-left: 20%;
-
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-
-    z-index: 1000;
-
-    border-bottom-left-radius: 25px;
-
-}
-
-.navbar h6 {
-    margin: 0;
-    color: rgb(215, 234, 251);
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-.navbar-links {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.navbar a {
-    color: rgb(215, 234, 251);
-    text-decoration: none;
-    transition: 0.2s ease;
-}
-
-.navbar a:hover {
-    color: rgb(108, 186, 255);
-}
-
-
-.sectmain {
-    text-align: center;
-    padding: 24px;
-}
-
-.sectmain h1 {
-    font-family: "Edu NSW ACT Cursive", cursive;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-style: normal;
-    margin: 0;
-}
-
-
-hr {
-    background: linear-gradient(to left, #395bb1, #a739b1, #b13939);
-    height: 2px;
-    border: none;
-}
-
-.ascii-title {
-    display: inline-block;
-    font-family: monospace;
-    white-space: pre;
-    text-align: left;
-    color: white;
-    font-size: 32px;
-    line-height: 1;
-}
-.ascii-footer {
-    font-family: monospace;
-    white-space: pre;
-    color: white;
-    font-size: 8px;
-    line-height: 1;
-}
-
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(190px, 220px));
-    gap: 16px;
-    align-items: start;
-    justify-content: start;
-    padding: 0 24px 24px;
-}
-
-.team-card {
-    border: 1px solid #395bb1e3;
-    padding: 12px;
+    gap: 15px;
     width: 100%;
-    box-sizing: border-box;
-    border-radius: 25px;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-    height: 250px;
+    margin: 0 auto;
 }
 
-.team-card:hover {
-    border-color: #4668bfe3;
-    background-color: rgba(57, 91, 177, 0.12);
-}
-
-.team-card-image {
-    width: 50px;
-    height: 50px;
-    object-fit: cover;
-    border-radius: 100%;
-}
-
-.team-card-socials {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.team-card-socials a {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: inherit;
+a {
+    color: white;
     text-decoration: none;
-    font: inherit;
+}
+div {
+  background-color: #242b42;
+  width: 100%;
+  height: fit-content;
+  padding: 10px;
+  border-radius: 0px;
+  color: white;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
-.team-card-socials a.has-icon {
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
+h1 {
+    text-align: center;
 }
 
-.team-card-socials a.has-icon span {
-    font-size: 0.75rem;
+h3 {
+    text-align: center;
 }
 
-.team-card-social-icon {
-    width: 25px;
-    height: 25px;
-    object-fit: contain;
+.btn-main {
+    display: block;
+    width: fit-content;
+
+    border-radius: 50px;
+    border: 2px solid rgb(180, 0, 180);
+    background-color: rgb(180, 0, 180);
+    padding: 10px;
+    margin: 10px auto;
 }
 
-.team-card-quote {
-    font-style: italic;
+.directional-link {
+    display: block;
+    width: fit-content;
+
+    color: rgb(255, 88, 255);
+
+    padding: 10px;
+    margin: 10px auto;
 }
 
-.about-seperator {
-    margin-bottom: 3%;
-    background: linear-gradient(to left, #5f8dff, #f262ff, #ff5b5b);
+.directional-link-uncentered {
+    color: rgb(255, 88, 255);
+}
+
+.banner {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+}
+
+footer {
+    background-color: #00061c;
+    height: auto;
+    width: 100%;
+    color: white;
+    margin-top: auto;
+
+    padding: 10px;
+}
+
+.icon-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon-link img {
+  width: 12px;
+  height: 12px;
+  color: white;
+  fill: white;
 }

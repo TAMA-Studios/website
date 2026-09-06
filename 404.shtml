@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TAMA</title>
+        <link rel="stylesheet" href="/styles.css">
+        <link rel="stylesheet" href="/ubuntu.css">
+        
+    </head>
+    <body>
+        <nav id="navbar" class="navbar ubuntu-light">
+            <a href="https://tamastudios.us"><img src="/img/logo.png" alt="TAMA Logo" class="logo-nav"></a>
+            <a href="/projects/" >Projects</a>
+        </nav>
+        <hr>
+        <div>
+            <h1 class="ubuntu-bold">404</h1>
+            <h3 class="ubuntu-medium">Cannot find the page you are looking for!</h3>
+            <a href="https://tamastudios.us" class="directional-link ubuntu-medium">Go home</a>
+        </div>
+    </body>
+    <footer>
+        <a class="ubuntu-medium icon-link" href="/projects">
+            Our projects
+            <img src="/img/icon/arrow-up-right-square.svg">
+        </a>
+        <p style="text-align: center;" class="ubuntu-bold">&copy; TAMA Studios 2026</p>
+    </footer>
+</html>
