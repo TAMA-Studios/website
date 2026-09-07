@@ -92,8 +92,20 @@ h3 {
     margin: 10px auto;
 }
 
-.directional-link-uncentered {
-    color: rgb(255, 88, 255);
+.directional-link-secondary {
+    color: rgb(255, 88, 94);
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.directional-link-other {
+    color: rgb(243, 243, 243);
+    display: block;
+    width: fit-content;
+    padding: 10px;
+    margin: 10px auto;
 }
 
 .banner {
