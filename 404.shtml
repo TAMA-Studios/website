@@ -6,6 +6,7 @@
         <title>TAMA</title>
         <link rel="stylesheet" href="/styles.css">
         <link rel="stylesheet" href="/ubuntu.css">
+        <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
         
     </head>
     <body>

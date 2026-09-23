@@ -36,7 +36,7 @@ hr {
 
 
 body {
-    background-color: #171b2a;
+    background-color: #21172a;
 }
 
 .navbar {
@@ -49,11 +49,15 @@ body {
 }
 
 a {
-    color: white;
+    color: wheat;
     text-decoration: none;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    padding: 5px;
+    background: linear-gradient(to top, #0059b357, #00000000);
 }
 div {
-  background-color: #242b42;
+  background-color: #086fc9;
   width: 100%;
   height: fit-content;
   padding: 10px;
@@ -62,6 +66,7 @@ div {
   margin-top: 10px;
   margin-bottom: 10px;
 }
+
 
 h1 {
     text-align: center;

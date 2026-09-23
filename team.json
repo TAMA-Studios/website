@@ -1,22 +1,106 @@
 {
-  "Artists": [],
-  "Devs": [
-    {
-       "profileImage": "img/pfp/alastor.jpeg",
-       "name": "Alastor (DJ)",
-       "socials": [
-        {"name": "GitHub", "url": "https://github.com/TheDJGamerYT"}
-       ],
-       "quote": "Something old, something new. Something borrowed. Something blue."
-    },
-    {
-        "profileImage": "img/logo.png",
-        "name": "Codiak",
-        "socials": [
-            {"name": "GitHub", "url": "https://github.com/Codiak540", "icon": "img/icon/commit.svg"},
-            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"}
-        ],
-        "quote": "I made python my bitch."
-    }
-  ]
+    "Devs": [
+        {
+            "name": "Alastor (DJ)",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/TheDJGamerYT",
+                    "icon": "img/icon/commit.svg"
+                }
+            ],
+            "quote": "Something old, something new. Something borrowed. Something blue.",
+            "color": "9C1A04",
+            "role": [
+                "dev",
+                "art"
+            ]
+        },
+        {
+            "profileImage": "img/logo.png",
+            "name": "Codiak",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/Codiak540",
+                    "icon": "img/icon/commit.svg"
+                },
+                {
+                    "name": "Youtube",
+                    "url": "https://www.youtube.com/@CodiakASEOHA",
+                    "icon": "img/icon/play.svg"
+                }
+            ],
+            "quote": "I made python my bitch.",
+            "role": [
+                "dev",
+                "art",
+                "3d"
+            ]
+        }
+    ],
+    "Artists": [
+        {
+            "name": "Alastor (DJ)",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/TheDJGamerYT",
+                    "icon": "img/icon/commit.svg"
+                }
+            ],
+            "quote": "Something old, something new. Something borrowed. Something blue.",
+            "color": "9C1A04",
+            "role": [
+                "dev",
+                "art"
+            ]
+        },
+        {
+            "profileImage": "img/logo.png",
+            "name": "Codiak",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/Codiak540",
+                    "icon": "img/icon/commit.svg"
+                },
+                {
+                    "name": "Youtube",
+                    "url": "https://www.youtube.com/@CodiakASEOHA",
+                    "icon": "img/icon/play.svg"
+                }
+            ],
+            "quote": "I made python my bitch.",
+            "role": [
+                "dev",
+                "art",
+                "3d"
+            ]
+        }
+    ],
+    "Modelers": [
+        {
+            "profileImage": "img/logo.png",
+            "name": "Codiak",
+            "socials": [
+                {
+                    "name": "GitHub",
+                    "url": "https://github.com/Codiak540",
+                    "icon": "img/icon/commit.svg"
+                },
+                {
+                    "name": "Youtube",
+                    "url": "https://www.youtube.com/@CodiakASEOHA",
+                    "icon": "img/icon/play.svg"
+                }
+            ],
+            "quote": "I made python my bitch.",
+            "role": [
+                "dev",
+                "art",
+                "3d"
+            ]
+        }
+    ]
 }
