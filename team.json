@@ -1,15 +1,21 @@
 {
     "Devs": [
         {
+            "profileImage": "img/pfp/alastor.jpeg",
             "name": "Alastor (DJ)",
             "socials": [
                 {
                     "name": "GitHub",
                     "url": "https://github.com/TheDJGamerYT",
                     "icon": "img/icon/commit.svg"
+                },
+                {
+                    "name": "Email",
+                    "url": "mailto:yourfriendthedj@tamastudios.us",
+                    "icon": "img/icon/mail.svg"
                 }
             ],
-            "quote": "Something old, something new. Something borrowed. Something blue.",
+            "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
             "color": "9C1A04",
             "role": [
                 "dev",
@@ -31,7 +37,7 @@
                     "icon": "img/icon/play.svg"
                 }
             ],
-            "quote": "I made python my bitch.",
+            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
             "role": [
                 "dev",
                 "art",
@@ -41,15 +47,21 @@
     ],
     "Artists": [
         {
+            "profileImage": "img/pfp/alastor.jpeg",
             "name": "Alastor (DJ)",
             "socials": [
                 {
                     "name": "GitHub",
                     "url": "https://github.com/TheDJGamerYT",
                     "icon": "img/icon/commit.svg"
+                },
+                {
+                    "name": "Email",
+                    "url": "mailto:yourfriendthedj@tamastudios.us",
+                    "icon": "img/icon/mail.svg"
                 }
             ],
-            "quote": "Something old, something new. Something borrowed. Something blue.",
+            "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
             "color": "9C1A04",
             "role": [
                 "dev",
@@ -71,7 +83,7 @@
                     "icon": "img/icon/play.svg"
                 }
             ],
-            "quote": "I made python my bitch.",
+            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
             "role": [
                 "dev",
                 "art",
@@ -95,7 +107,7 @@
                     "icon": "img/icon/play.svg"
                 }
             ],
-            "quote": "I made python my bitch.",
+            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
             "role": [
                 "dev",
                 "art",

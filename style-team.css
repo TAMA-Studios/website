@@ -67,6 +67,11 @@ div {
   margin-bottom: 10px;
 }
 
+.linkicon {
+  width: 25px;
+  height: 25px;
+}
+
 
 h1 {
     text-align: center;
