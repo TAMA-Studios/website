@@ -58,13 +58,16 @@ a {
 }
 div {
   background-color: #086fc9;
-  width: 100%;
   height: fit-content;
   padding: 10px;
   border-radius: 0px;
   color: white;
   margin-top: 10px;
   margin-bottom: 10px;
+  text-align: center;
+  width: 100%;
+  max-width: 670px;
+  margin: 0 auto;
 }
 
 .linkicon {
@@ -88,6 +91,17 @@ h3 {
     border-radius: 50px;
     border: 2px solid #ff2525;
     background-color: #ff2525;
+    padding: 10px;
+    margin: 10px auto;
+}
+
+.btn-secondary {
+    display: block;
+    width: fit-content;
+
+    border-radius: 50px;
+    border: 1px solid #25d3ff;
+    background-color: #07070700;
     padding: 10px;
     margin: 10px auto;
 }
