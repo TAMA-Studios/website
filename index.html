@@ -6,6 +6,7 @@
         <title>TAMA</title>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="ubuntu.css">
+        <link rel="stylesheet" href="team.css">
         <link rel="shortcut icon" href="/img/logo.png" type="image/x-icon">
         
     </head>
@@ -16,19 +17,21 @@
         </nav>
         <hr>
         <img src="./img/tamabanner.png" alt="TAMA Banner" class="banner">
-        <div>
+        <div class="main-div">
             <h1 class="ubuntu-bold">We have a discord!</h1>
             <p style="text-align: center;" class="ubuntu-medium">Join the community and get help with our products</p>
             <p style="text-align: center;" class="ubuntu-medium">Or just to hang out!</p>
             <a href="https://discord.gg/Re2hEJ3rwP" class="btn-main ubuntu-medium">Join the discord!</a>
         </div>
-        <div>
+        <div id="team-div-main" class="main-div">
             <h1 class="ubuntu-bold">Our Team!</h1>
-            <iframe src="team.html" frameborder="0" style="width: 100%; height: 600px;"></iframe>
+            <div id="team" class="team-div">
+
+            </div>
         </div>
     </body>
     <footer>
-        <uv>
+        <uv class = "footer-links">
             <h4>
                 <a href="/projects" class="ubuntu-medium directional-link-other">Projects</a>
                 <a href="https://discord.gg/Re2hEJ3rwP" class="ubuntu-medium directional-link-other">Discord</a>
@@ -37,4 +40,5 @@
         
         <p style="text-align: center;" class="ubuntu-bold">&copy; TAMA Studios 2026</p>
     </footer>
+    <script src="team.js"></script>
 </html>

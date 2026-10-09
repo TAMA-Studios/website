@@ -1,118 +1,33 @@
-{
-    "Devs": [
-        {
-            "profileImage": "img/pfp/alastor.jpeg",
-            "name": "Alastor (DJ)",
-            "socials": [
-                {
-                    "name": "GitHub",
-                    "url": "https://github.com/TheDJGamerYT",
-                    "icon": "img/icon/commit.svg"
-                },
-                {
-                    "name": "Email",
-                    "url": "mailto:yourfriendthedj@tamastudios.us",
-                    "icon": "img/icon/mail.svg"
-                }
-            ],
-            "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
-            "color": "9C1A04",
-            "role": [
-                "dev",
-                "art"
-            ]
-        },
-        {
-            "profileImage": "img/logo.png",
-            "name": "Codiak",
-            "socials": [
-                {
-                    "name": "GitHub",
-                    "url": "https://github.com/Codiak540",
-                    "icon": "img/icon/commit.svg"
-                },
-                {
-                    "name": "Youtube",
-                    "url": "https://www.youtube.com/@CodiakASEOHA",
-                    "icon": "img/icon/play.svg"
-                }
-            ],
-            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
-            "role": [
-                "dev",
-                "art",
-                "3d"
-            ]
-        }
-    ],
-    "Artists": [
-        {
-            "profileImage": "img/pfp/alastor.jpeg",
-            "name": "Alastor (DJ)",
-            "socials": [
-                {
-                    "name": "GitHub",
-                    "url": "https://github.com/TheDJGamerYT",
-                    "icon": "img/icon/commit.svg"
-                },
-                {
-                    "name": "Email",
-                    "url": "mailto:yourfriendthedj@tamastudios.us",
-                    "icon": "img/icon/mail.svg"
-                }
-            ],
-            "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
-            "color": "9C1A04",
-            "role": [
-                "dev",
-                "art"
-            ]
-        },
-        {
-            "profileImage": "img/logo.png",
-            "name": "Codiak",
-            "socials": [
-                {
-                    "name": "GitHub",
-                    "url": "https://github.com/Codiak540",
-                    "icon": "img/icon/commit.svg"
-                },
-                {
-                    "name": "Youtube",
-                    "url": "https://www.youtube.com/@CodiakASEOHA",
-                    "icon": "img/icon/play.svg"
-                }
-            ],
-            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
-            "role": [
-                "dev",
-                "art",
-                "3d"
-            ]
-        }
-    ],
-    "Modelers": [
-        {
-            "profileImage": "img/logo.png",
-            "name": "Codiak",
-            "socials": [
-                {
-                    "name": "GitHub",
-                    "url": "https://github.com/Codiak540",
-                    "icon": "img/icon/commit.svg"
-                },
-                {
-                    "name": "Youtube",
-                    "url": "https://www.youtube.com/@CodiakASEOHA",
-                    "icon": "img/icon/play.svg"
-                }
-            ],
-            "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
-            "role": [
-                "dev",
-                "art",
-                "3d"
-            ]
-        }
-    ]
-}
+[
+    {
+        "profileImage": "img/pfp/alastor.jpeg",
+        "name": "Alastor (DJ)",
+        "socials": [
+            {"name": "GitHub", "url": "https://github.com/TheDJGamerYT", "icon": "img/icon/commit.svg"},
+            {"name": "Email", "url": "mailto:yourfriendthedj@tamastudios.us", "icon": "img/icon/mail.svg"}
+        ],
+        "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
+        "color": "9C1A04",
+        "role": ["Developer", "Artist"]
+    },
+    {
+        "profileImage": "img/logo.png",
+        "name": "Codiak",
+        "socials": [
+            {"name": "GitHub", "url": "https://github.com/Codiak540", "icon": "img/icon/commit.svg"},
+            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"}
+        ],
+        "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
+        "role": ["Developer", "Artist", "Modeler"]
+    },
+    {
+        "profileImage": "img/logo.png",
+        "name": "Codiak",
+        "socials": [
+            {"name": "GitHub", "url": "https://github.com/Codiak540", "icon": "img/icon/commit.svg"},
+            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"}
+        ],
+        "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
+        "role": ["Developer", "Artist", "Modeler"]
+    }
+]
