@@ -1,12 +1,12 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 html,
 body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100%;
 }
 
 .logo-nav {
@@ -15,23 +15,23 @@ body {
 }
 
 html, body {
-  height: 100%;
-  margin: 0;
+    height: 100%;
+    margin: 0;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 hr {
-  display: block;
-  flex: 0 0 auto;
-  width: 100%;
-  margin: 8px 0;
-  border: none;
-  border-top: 1px solid white;
+    display: block;
+    flex: 0 0 auto;
+    width: 100%;
+    margin: 8px 0;
+    border: none;
+    border-top: 1px solid white;
 }
 
 
@@ -53,20 +53,15 @@ a {
     text-decoration: none;
 }
 .main-div {
-  background-color: #242b42;
-  width: 100%;
-  height: fit-content;
-  padding: 10px;
-  border-radius: 0px;
-  color: white;
-  margin-top: 10px;
-  margin-bottom: 10px;
+    background-color: #242b42;
+    width: 100%;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 0px;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
-
-.footer-links {
-    
-}
-
 
 h1 {
     text-align: center;
@@ -77,37 +72,47 @@ h3 {
 }
 
 .tcenter {
-  text-align: center;
+    text-align: center;
 }
 
 .imgc {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 5px;
-  max-width: 98%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    max-width: 98%;
 }
 
 .btn-main {
     display: block;
     width: fit-content;
 
-    border-radius: 50px;
+    border-radius: 5px;
     border: 2px solid #ff2525;
     background-color: #ff2525;
     padding: 10px;
     margin: 10px auto;
+    transition: all 0.2s ease-in-out;
+}
+.btn-main:hover {
+    background-color: #c11c1c;
+    transition: all 0.2s ease-in-out;
 }
 
 .btn-secondary {
     display: block;
     width: fit-content;
 
-    border-radius: 50px;
+    border-radius: 5px;
     border: 1px solid #25d3ff;
     background-color: #07070700;
     padding: 10px;
     margin: 6px auto;
+    transition: all 0.2s ease-in-out;
+}
+.btn-secondary:hover {
+    background-color: rgb(0 168 188 / 0.13);
+    transition: all 0.2s ease-in-out;
 }
 
 .directional-link {
@@ -159,14 +164,14 @@ footer {
 }
 
 .icon-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .icon-link img {
-  width: 12px;
-  height: 12px;
-  color: white;
-  fill: white;
+    width: 12px;
+    height: 12px;
+    color: white;
+    fill: white;
 }

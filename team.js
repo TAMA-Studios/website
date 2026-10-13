@@ -1,4 +1,4 @@
-
+// function to get the json file containing the members
 async function memjson() {
     try {
         const response = await fetch('/team.json');
@@ -7,34 +7,57 @@ async function memjson() {
         console.error("Failed to fetch JSON data:", error);
     }
 }
-
+// main function for generating the members section
 async function main() {
     let members = await memjson();
     let memdiv = document.getElementById("team");
     for (const member of members) {
-        let mem = document.createElement("div");
-        mem.classList.add("team-member");
+        let card = document.createElement("div");
+        card.classList.add("memcard");
 
-        let memname = document.createElement("h4");
-        memname.textContent = member["name"];
-        memname.classList.add("ubuntu-bold");
-        mem.appendChild(memname);
-        let td = document.createElement("div");
-        td.classList.add("team-tag-box");
-        for (const tag of member["role"]) {
-            let tg = document.createElement("p");
-            tg.textContent = tag;
-            tg.classList.add("team-tag");
-            tg.classList.add("ubuntu-medium");
-            td.appendChild(tg);
+        let name = document.createElement("h2");
+        name.textContent = member["name"];
+
+        let role = document.createElement("p");
+        role.textContent = member["role"];
+
+        let quote = document.createElement("i");
+        quote.textContent = member["quote"];
+
+        let socials = member["socials"];
+
+        let socks = document.createElement("div")
+
+        for (const social of socials) {
+            let sock = document.createElement("a");
+            let img = document.createElement("img");
+            img.src = social["icon"];
+            img.alt = social["name"];
+            img.classList.add("sock-icon");
+            sock.appendChild(img);
+            sock.href = social["url"];
+            socks.appendChild(sock);
         }
-        mem.appendChild(td);
 
+        socks.classList.add("socks");
 
-        memdiv.appendChild(mem);
+        name.classList.add("ubuntu-medium");
+        name.classList.add("name");
+
+        role.classList.add("ubuntu-medium");
+        role.classList.add("role");
+
+        quote.classList.add("quote");
+
+        card.appendChild(name);
+        card.appendChild(role);
+        card.appendChild(quote);
+        card.appendChild(socks);
+
+        memdiv.appendChild(card);
 
     }
 }
 
-
+// run main() on DOM load
 document.addEventListener('DOMContentLoaded', main);

@@ -6,30 +6,56 @@
     width: 100%;
 }
 
-.team-member {
-    flex: 1 1 300px;
-    max-width: 450px;
-    min-width: 0;
-    box-sizing: border-box;
+.memcard {
+    position: relative;
     color: white;
-    border: 3px solid #4e4e4e;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: #222222;
+    padding-left: 13px;
+    padding-right: 13px;
+    padding-bottom: 50px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #3a3a5a;
+    background-color: #222242;
+    width: 370px;
+    transition: all 0.2s ease-in-out;
 }
 
-.team-tag {
-    color: white;
-    padding: 6px;
-    border-radius: 8px;
-    background-color: #3c395c;
-    white-space: nowrap;
+.memcard:hover {
+    background-color: #222262;
+    border-color: #3a3a7a;
+    margin-left: 5px;
+    margin-right: 5px;
+    transition: all 0.2s ease-in-out;
 }
 
-.team-tag-box {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 8px;
+.role {
+    font-size: small;
+    text-align: center;
+}
+
+.quote {
+    overflow-wrap: break-word;
+    white-space: normal;
+}
+
+.name {
+    text-align: center;
+}
+
+.sock-icon {
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+    transition: all 0.1s ease-in-out;
+}
+
+.sock-icon:hover {
+    width: 30px;
+    height: 30px;
+    transition: all 0.1s ease-in-out;
+}
+
+.socks {
+    position: absolute;
+    bottom: 0;
 }

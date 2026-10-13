@@ -8,26 +8,26 @@
         ],
         "quote": "Codiak says we're \"ethically sourced, free ranged developers.\" He's lying.",
         "color": "9C1A04",
-        "role": ["Developer", "Artist"]
+        "role": "Secondary Dev & Head IT dude"
     },
     {
         "profileImage": "img/logo.png",
         "name": "Codiak",
         "socials": [
             {"name": "GitHub", "url": "https://github.com/Codiak540", "icon": "img/icon/commit.svg"},
-            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"}
+            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"},
+            {"name": "Email", "url": "mailto:codiak540@tamastudios.us", "icon": "img/icon/mail.svg"}
         ],
         "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
-        "role": ["Developer", "Artist", "Modeler"]
+        "role": "Lead developer & artist"
     },
     {
         "profileImage": "img/logo.png",
-        "name": "Codiak",
+        "name": "Nivus Pernix \"Niv\"",
         "socials": [
-            {"name": "GitHub", "url": "https://github.com/Codiak540", "icon": "img/icon/commit.svg"},
-            {"name": "Youtube", "url": "https://www.youtube.com/@CodiakASEOHA", "icon": "img/icon/play.svg"}
+            {"name": "Website", "url": "https://rapidradiance.github.io/Website/", "icon": "img/icon/wireless.svg"}
         ],
-        "quote": "Metals are harder but not THAT hard. wood... keep it away from me",
-        "role": ["Developer", "Artist", "Modeler"]
+        "quote": "Actually.. Claude, explain what all that shit means",
+        "role": "2D & 3D artist"
     }
 ]
