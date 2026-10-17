@@ -23,8 +23,6 @@
 .memcard:hover {
     background-color: #222262;
     border-color: #3a3a7a;
-    margin-left: 5px;
-    margin-right: 5px;
     transition: all 0.2s ease-in-out;
 }
 
